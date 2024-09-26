@@ -7,19 +7,19 @@ jobs:
   build-deploy:
     runs.on: ubuntu-intest
 
-  steps:
-    - uses: actions/checkout@v4
-    - name: compact arquivo
-      run: |
-        tar -cvzf buld-file.tar.gz index.html
-    - name: copia arquivo para o server
-      uses: appleboy/scp-action@v0.1.4
-      with:
-        host: ${{ secrts.HOST}}
-        username: ${{ secrets.USERNAME }}
-        port: 22
-        key: $ {{ secrets.SSH_KEY }}
-        source: "buld-file.tar.gz"
-        target: /tmp
+    steps:
+      - uses: actions/checkout@v4
+      - name: compact arquivo
+        run: |
+          tar -cvzf buld-file.tar.gz index.html
+      - name: copia arquivo para o server
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrts.HOST}}
+          username: ${{ secrets.USERNAME }}
+          port: 22
+          key: $ {{ secrets.SSH_KEY }}
+          source: "buld-file.tar.gz"
+          target: /tmp
         
   
