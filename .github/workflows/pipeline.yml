@@ -15,7 +15,7 @@ jobs:
       - name: copia arquivo para o server
         uses: appleboy/scp-action@v0.1.4
         with:
-          host: ${{ secrts.HOST}}
+          host: ${{ secrets.HOST}}
           username: ${{ secrets.USERNAME }}
           port: 22
           key: $ {{ secrets.SSH_KEY }}
