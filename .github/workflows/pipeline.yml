@@ -5,7 +5,7 @@ on:
 
 jobs:
   build-deploy:
-    runs.on: ubuntu-intest
+    runs-on: ubuntu-intest
 
     steps:
       - uses: actions/checkout@v4
